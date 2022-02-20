@@ -1,0 +1,21 @@
+<ul className="sub-menu">
+                            <li>Avisory & Consulting <IoIosArrowForward />
+                                    
+                            </li>
+                            <li>Cloud Services
+                                <IoIosArrowForward />
+
+                            </li>
+                            <li>Contact Center
+                                <IoIosArrowForward />
+                            </li>
+                            <li>Customer Experience
+                                <IoIosArrowForward />
+                            </li>
+                            <li>Data Analytics
+                                <IoIosArrowForward />
+                            </li>
+                            <li>Data Center
+                                <IoIosArrowForward />
+                            </li>
+                            </ul>

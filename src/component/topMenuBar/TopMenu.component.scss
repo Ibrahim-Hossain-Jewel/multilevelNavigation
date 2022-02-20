@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+$navBackground : #ffffff;
+$navFontColor : #0A186E;
+$menu-hover-color: #F0F0F0;
+.main-menu{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: .5px .5px 2px gray;
+}
+.logoside, .rightside{
+    padding: 35px 35px;
+}
+.centerside{
+    position: relative;
+    ul{
+        list-style: none;
+        display: inline-block;
+        li{
+            display: inline-block;
+            padding: 35px 35px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            &:hover{
+                background-color: $menu-hover-color;
+            }
+        }
+    }
+}
+//main content section
+
+.contentDiv{
+    width: 95%;
+    height: 500px;
+    margin: 1px auto;
+    position: relative;
+    background-color: white;
+    box-shadow: 0.5px 0.5px 2px grey;
+    border-radius: 5px;
+    display: flex;
+    justify-content:space-evenly;
+    display: none;
+    .dropdown-card{
+        width: 29%;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        box-shadow: 0.5px 0.5px 2px grey;
+        border-radius: 5px;
+    }
+
+    .sub-menu{
+        
+        width: 62%;
+        position: absolute;
+        border-radius: 6px;
+        list-style:none;
+        left: 0;
+        padding-top: 20px;
+        text-indent: 7px;
+        padding-left: 2px;
+        
+        // code for right arrow key
+        svg {
+            position: absolute;
+            right: -50%;
+        }
+        //code for active class
+        .is-active{
+            color: white;
+            background-color: #0055ff;
+            border-radius: 5px 0px 0px 5px;
+            &:hover{
+                background-color: #0055ff;
+                color: white;
+                border-radius: 5px 0px 0px 5px;
+            }
+        }
+        
+    }
+    .sub-menu li{
+        cursor: pointer;
+        padding: 13px;
+        width: 145%;
+        margin-left: 10px;
+        overflow: hidden;
+        //component 1 code below
+        .component{
+            position: absolute;
+            left: 175%;
+            top: 2%;
+            display: none;
+        }
+        .showComponent{
+            display: block;
+        }
+        //component 2 are below;
+        .component2{
+            position: absolute;
+            left: 175%;
+            top: 2%;
+            display: none;
+        }
+        .showComponent2{
+            display: block;
+        }
+    }
+    .sub-menu li:hover{
+        color: #0055ff;
+        background-color: #F0F0F0;
+        cursor: pointer;
+        border-radius: 5px 0px 0px 5px;
+    }
+}
+//off dropdown 
+.dropdownoff{
+    display: block;
+}
+.dropdownoff::after{
+    content: "";
+    width: 143px;
+    position: absolute;
+    left: 261px;
+    right: 0px;
+    top: -7px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #0A186E;
+}
