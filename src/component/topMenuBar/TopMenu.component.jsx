@@ -9,7 +9,8 @@ export default function TopMenu (){
     //first component;
     const [first, setfirst] = useState(false);
     const [second, setsecond] = useState(false);
-
+    //use one state instead of multiple state;
+    
     return(
         <div className="topMenu">
             <div className="main-menu">
