@@ -7,10 +7,34 @@ import CloudService from '../services-collections/cloudService/CloudServices.com
 export default function TopMenu (){
     const [rightside, setrightside] = useState(false);
     //first component;
-    const [first, setfirst] = useState(false);
-    const [second, setsecond] = useState(false);
+    // const [first, setfirst] = useState(false);
+    // const [second, setsecond] = useState(false);
     //use one state instead of multiple state;
-    
+    const [active, setactive] = useState({
+        first: false,
+        second: false,
+    });
+    //now make handler for update each event
+    // eslint-disable-next-line no-unused-vars
+    const firsthandler = ()=>{
+        setactive(()=>{
+            return {
+                first: !active.first,
+                second: false,
+            }
+        })
+        
+    }
+    // eslint-disable-next-line no-unused-vars
+    const secondhandler = ()=>{
+        setactive(()=>{
+            return {
+                first: false,
+                second: !active.second
+            }
+        })
+    }
+
     return(
         <div className="topMenu">
             <div className="main-menu">
@@ -41,14 +65,14 @@ export default function TopMenu (){
             <div className={`contentDiv ${rightside ? 'dropdownoff' : null }`}>
                 <div className="dropdown-card showDropdown" >
                     <ul className="sub-menu">
-                        <li onClick={()=> setfirst(!first) } className = {first ? 'is-active' : null} id="man">Avisory & Consulting <IoIosArrowForward />
-                            <div className={`component ${first ? 'showComponent' : null}`}>
+                        <li onClick={ firsthandler } className = {active.first ? 'is-active' : null} id="man">Avisory & Consulting <IoIosArrowForward />
+                            <div className={`component ${active.first ? 'showComponent' : null}`}>
                                 <AdvisoryConsulting />
                             </div>
                         </li>
-                        <li onClick={()=> setsecond(!second) } className = {second ? 'is-active' : null }> Cloud Services
+                        <li onClick={ secondhandler } className = {active.second ? 'is-active' : null }> Cloud Services
                             <IoIosArrowForward />
-                            <div className={`component2 ${second ? 'showComponent2': null }`} >
+                            <div className={`component2 ${active.second ? 'showComponent2': null }`} >
                                 <CloudService />
                             </div>
                         </li>
